@@ -38,6 +38,20 @@ class GetMoney extends Controller{
 		return new Response(
 				json_encode($response)
 		);
-	} 
+	}
+	
+	/**
+	 * @Route("/CheckUser")
+	 */
+	public function CheckUser()
+	{
+		$user = "clickbus";
+		$pin  = "clickbus";
+		 
+		return new Response(
+				"HOLA"
+		);
+		 
+	}
 		
 }
