@@ -7,16 +7,28 @@
 	    <div class="col-md-4">&nbsp;</div>
 	    <div class="col-md-4">
 	    
+	    	<div id="alerts" style="padding:10px;"></div>
+	    
 	    	<form id="step1">
 			  <div class="form-group">
-			    <label for="exampleInputEmail1">Usuario</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Usuario">
+			    <label for="user">Usuario</label>
+			    <input type="text" class="form-control" id="user" placeholder="Usuario" value="clickbus">
 			  </div>
 			  <div class="form-group">
-			    <label for="exampleInputPassword1">PIN</label>
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="PIN">
+			    <label for="pin">PIN</label>
+			    <input type="password" class="form-control" id="pin" placeholder="PIN" value="clickbus">
 			  </div>
-			  <button type="submit" class="btn btn-default">Siguiente</button>
+			  <button type="button" class="btn btn-default" id="btn_validate_user">Siguiente</button>
+			</form>
+			
+			<br>
+			
+			<form id="step2" style="display:none;">
+			  <div class="form-group">
+			    <label for="amount">Monto a solicitar</label>
+			    <input type="number" class="form-control" id="amount" placeholder="Monto">
+			  </div>
+			  <button type="button" class="btn btn-default" id="btn_get_money">Siguiente</button>
 			</form>
 	    
 	    </div>
