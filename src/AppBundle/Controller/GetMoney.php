@@ -69,12 +69,15 @@ class GetMoney extends Controller{
 				$mod = $cantidad%$den;
 				$NumBilletes = intval($cantidad/$den);
 				
-				//Array con numero de denominaciones a entregar
-				$response["amounts"][] = "Cantidad de billetes de {$den}: {$NumBilletes}";
-				
-				if($mod==0){	//Si el residuo fue cero se para el ciclo 
+				//Solo si hay billetes a entregar de esta denominacion se entregan
+				if($NumBilletes>0){
+					$response["amounts"][] = "Cantidad de billetes de {$den}: {$NumBilletes}";
+				}
+
+				//Si el residuo fue cero se para el ciclo de lo contrario se actualiza cantidad con lo restante y se repite el ciclo
+				if($mod==0){
 					break;
-				}else{ 			//De lo contrario se actualiza cantidad con lo restante y se repite el ciclo
+				}else{
 					$cantidad = $mod;
 				}
 				
